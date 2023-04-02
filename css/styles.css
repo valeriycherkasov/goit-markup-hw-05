@@ -104,6 +104,7 @@ img {
 .header-item {
 }
 .header-link {
+  position: relative;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -115,6 +116,22 @@ img {
 .header-link:hover,
 .header-link:focus {
   color: var(--seventh-text-color);
+}
+
+.header-link.current {
+  color: var(--seventh-text-color);
+}
+
+.header-link.current::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  top: 42px;
+  background-color: #404bbf;
+  border-radius: 2px;
 }
 
 .header-address {
@@ -551,7 +568,9 @@ img {
   overflow: auto;
   transform: translate(0, 100%);
   font-size: 16px;
-  padding: 40px 32px 164px;
+  padding: 40px 32px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   color: var(--fifth-text-color);
   background-color: #4d5ae5;
   background-blend-mode: soft-light;
